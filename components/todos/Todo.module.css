@@ -1,16 +1,22 @@
-.todoContainer{
-	padding: 15px;
-	margin: 15px 0;
-	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+.todoContainer {
+  padding: 50px;
+  margin: 15px 0;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 15px;
 }
 
-.createdby{
-	font-size: 15px;
-	color: rgb(46, 46, 46);
+.createdby {
+  font-size: 15px;
+  color: rgb(46, 46, 46);
 }
 
-.date{
-	font-family: monospace;
-	font-size: 12px;
-	color: rgb(46, 46, 46);
+.desc {
+  font-size: 20px;
+  color: rgb(20, 20, 20);
+}
+
+.date {
+  font-family: monospace;
+  font-size: 12px;
+  color: rgb(46, 46, 46);
 }

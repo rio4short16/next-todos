@@ -1,43 +1,16 @@
 // import todoForm
-import { useRouter } from 'next/router'
-import { useRef } from 'react'
-// function NewTodo() {
+import { useRouter } from "next/router";
+import FormComponent from "../../components/todos/NewTodoForm";
+import axios from "axios";
 
-// 	const router = useRouter()
-// 	async function addTodoHandler(enteredTodoData) {
-// 		const response = await fetch('/api/new-todo', {
-// 			method: 'POST',
-// 			body: JSON.stringify(enteredTodoData),
-// 			headers: {
-// 				'Content-Type': 'application/json'
-// 			}
-// 		})
+function NewTodoForm(props) {
+  const router = useRouter();
+  async function addTodoHandler(enteredTodoData) {
+    const res = await axios.post("/api/new-todo", enteredTodoData);
+    if (res.data.result) router.push("/todo/");
+  }
 
-// 		const data = await response.json()
-// 		console.log(data);
+  return <FormComponent title="Create New Todo" onAddTodo={addTodoHandler} />;
+}
 
-// 		router.push('/')
-// 	}
-// }
-
-// function NewTodoForm(props) {
-// 	const titleInputRef = useRef()
-// 	const createdbyInputRef = useRef()
-// 	const dateInputRef = useRef()
-
-// 	function submitHandler(event) {
-// 		event.preventDefault()
-
-// 		const enteredTitle = titleInputRef.current.value;
-// 		const enteredCreated = createdbyInputRef.current.value;
-// 		const enteredDate = dateInputRef.current.value;
-
-// 		const todoData = {
-// 			title: enteredTitle,
-// 			createdby: enteredCreated,
-// 			date: enteredDate
-// 		}
-
-// 		props.onAddTodo(todoData)
-// 	}
-// }
+export default NewTodoForm;

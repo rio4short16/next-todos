@@ -1,3 +1,16 @@
-.ListContainer{
-	padding: 0 10%;
+.ListContainer {
+  padding: 0 10%;
+}
+
+.btncreate {
+  margin: 15px 0;
+  background: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 8px 75px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }

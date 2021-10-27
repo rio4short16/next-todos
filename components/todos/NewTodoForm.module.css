@@ -1,0 +1,40 @@
+.myform {
+  margin: auto;
+  max-width: 600px;
+  padding: 50px;
+  border: 2px solid black;
+}
+
+.formtitle {
+  font-size: 2rem;
+  margin-bottom: 7px;
+}
+
+.formgroup {
+  margin: 15px 0;
+}
+
+.formlabel {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.forminput {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+}
+
+.formbutton {
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  background: dodgerblue;
+  color: #fff;
+  border: 0;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
