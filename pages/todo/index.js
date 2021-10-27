@@ -1,30 +1,22 @@
 import TodoList from "../../components/todos/TodoList";
-import { MongoClient } from "mongodb";
+import axios from "axios";
+export const getStaticProps = async () => {
+  const res = await axios.get("http://localhost:3000/api/todos");
+  console.log(res.data);
+  return {
+    props: {
+      todos: res.data.tasks,
+    },
+    revalidate: 1,
+  };
+};
+
 function Home({ todos }) {
   return (
     <>
       <TodoList todos={todos} />
     </>
   );
-}
-
-export async function getStaticProps(context) {
-  const uri =
-    "mongodb+srv://sampleuser:7d4dbmzdBj2uXvO4@clustertest.yakxb.mongodb.net/test";
-  const client = await MongoClient.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  const todosCollection = client.db("test").collection("todos");
-  const todo = await todosCollection.find({}).toArray();
-  client.close();
-
-  return {
-    props: {
-      todos: JSON.parse(JSON.stringify(todo)),
-    },
-    revalidate: 1,
-  };
 }
 
 export default Home;

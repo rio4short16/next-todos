@@ -22,8 +22,6 @@ function NewTodoForm(prop) {
       date: enteredDate,
     };
 
-    console.log(todoData);
-
     prop.onAddTodo(todoData);
   }
   return (

@@ -6,7 +6,7 @@ import axios from "axios";
 function NewTodoForm(props) {
   const router = useRouter();
   async function addTodoHandler(enteredTodoData) {
-    const res = await axios.post("/api/new-todo", enteredTodoData);
+    const res = await axios.post("/api/todos", enteredTodoData);
     if (res.data.result) router.push("/todo/");
   }
 
